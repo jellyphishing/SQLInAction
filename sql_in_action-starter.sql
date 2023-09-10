@@ -8,27 +8,40 @@
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 1 >>>>>>>>>>>>>>>>>>>>>>>
 -- Find out how many rows are in the table "final_airbnb"
--- EXPECTED OUTPUT: 146
+-- EXPECTED OUTPUT: 
+
+-- SELECT COUNT(*) FROM intro_sql.final_airbnb;
+ 
 
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 2 >>>>>>>>>>>>>>>>>>>>>>>
 -- Find out the name of the host for "host_id" 63613
 -- HINT: "Where" could it be?
 
+-- SELECT host_name FROM intro_sql.final_airbnb
+-- WHERE host_id = "63613";
+
+
 -- EXPECTED OUTPUT: Patricia
 
 
--- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 3 >>>>>>>>>>>>>>>>>>>>>>>
+-- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 3 >>>>>>>>>>>>>>>>>>>>
 -- Query the data to just show the unique neighbourhoods listed
 -- HINT: This is a "distinct" operation...
 
 -- EXPECTED OUTPUT: 40 neighbourhoods listed
 
+-- SELECT DISTINCT neighbourhood FROM intro_sql.final_airbnb
+-- ORDER BY neighbourhood ASC;
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 4 >>>>>>>>>>>>>>>>>>>>>>>
 
 -- Find both the highest price listing and the lowest price listing, displaying the entire row for each
 -- HINT: This can be two different queries.
+
+-- SELECT MAX(price) AS MAX_price FROM intro_sql.final_airbnb;
+-- SELECT MIN(price) AS MIN_price FROM intro_sql.final_airbnb;
+
 
 -- FOOD FOR THOUGHT: Think about the results. Are the high and low prices outliers in this data set?
 
@@ -39,12 +52,18 @@
 -- Find the average availability for all listings in the data set (using the availability_365 column)
 -- HINT: Aggregates are more than just big rocks...
 
+
+-- SELECT AVG(availability_365) AS Ave_availability_365 FROM intro_sql.final_airbnb;
+
 -- EXPECTED OUTPUT: 165.3904
 
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 6 >>>>>>>>>>>>>>>>>>>>>>>
 -- Find all listings that do NOT have a review
 -- HINT: There are a few ways to go about this. Remember that an empty cell is "no value", but not necessarily NULL
+
+SELECT * FROM intro_sql.final_airbnb
+WHERE number_of_reviews = "0";
 
 -- EXPECTED OUTPUT: 6 rows
 
