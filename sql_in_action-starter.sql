@@ -112,6 +112,13 @@
 -- Display the column using aliasing.
 -- HINT: Work this one step at a time. See if you can find a way to just display the count of listings per host first.
 
+-- SELECT host_name, COUNT(*)
+-- FROM intro_sql.final_airbnb
+-- GROUP BY host_name
+-- ORDER BY COUNT(*) DESC
+-- LIMIT 1;
+
+
 -- EXPECTED OUTPUT: The Box House Hotel with 6 listings
 
 
