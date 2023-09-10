@@ -85,17 +85,23 @@
 -- HINT: Look for which neighbourhood appears most frequently in the neighbourhood column
 -- HINT: You are creating "summary rows" for each neighbourhood, so you will just see one entry for each neighbourhood
 
-SELECT neighbourhood
-FROM intro_sql.final_airbnb
-GROUP BY neighbourhood
-ORDER BY COUNT(*) DESC
-LIMIT 1;
+-- SELECT neighbourhood
+-- FROM intro_sql.final_airbnb
+-- GROUP BY neighbourhood
+-- ORDER BY COUNT(*) DESC
+-- LIMIT 1;
 
 -- INVESTIGATE: Should Williamsburg be crowned the most popular neighbourhood?
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 9 >>>>>>>>>>>>>>>>>>>>>>>
 -- Query the data to discover which listing is the most popular using the reviews_per_month for all listings with a minimum_nights value of less than 7
 -- HINT: Sorting is still your friend! So are constraints.
+
+-- SELECT id FROM intro_sql.final_airbnb
+-- WHERE minimum_nights < 7
+-- ORDER BY reviews_per_month DESC
+-- LIMIT 1;
+
 
 -- EXPECTED OUTPUT: 58059
 
