@@ -62,8 +62,8 @@
 -- Find all listings that do NOT have a review
 -- HINT: There are a few ways to go about this. Remember that an empty cell is "no value", but not necessarily NULL
 
-SELECT * FROM intro_sql.final_airbnb
-WHERE number_of_reviews = "0";
+-- SELECT * FROM intro_sql.final_airbnb
+-- WHERE number_of_reviews = "0";
 
 -- EXPECTED OUTPUT: 6 rows
 
@@ -72,6 +72,11 @@ WHERE number_of_reviews = "0";
 -- Find the id of the listing with a room_type of "Private room" that has the most reviews 
 -- HINT: Sorting is your friend!
 
+-- SELECT id
+-- FROM intro_sql.final_airbnb
+-- WHERE room_type LIKE "Private room"
+-- ORDER BY number_of_reviews DESC
+-- LIMIT 1;
 -- EXPECTED OUTPUT: 58059
 
 
@@ -80,7 +85,12 @@ WHERE number_of_reviews = "0";
 -- HINT: Look for which neighbourhood appears most frequently in the neighbourhood column
 -- HINT: You are creating "summary rows" for each neighbourhood, so you will just see one entry for each neighbourhood
 
--- EXPECTED OUTPUT: Williamsburg
+SELECT neighbourhood
+FROM intro_sql.final_airbnb
+GROUP BY neighbourhood
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+
 -- INVESTIGATE: Should Williamsburg be crowned the most popular neighbourhood?
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 9 >>>>>>>>>>>>>>>>>>>>>>>
