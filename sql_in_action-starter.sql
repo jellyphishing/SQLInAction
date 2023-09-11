@@ -43,7 +43,7 @@
 -- SELECT MIN(price) AS MIN_price FROM intro_sql.final_airbnb;
 
 
--- FOOD FOR THOUGHT: Think about the results. Are the high and low prices outliers in this data set?
+-- FOOD FOR THOUGHT: Think about the results. Are the high and low prices outliers in this data set? YES!!!
 
 -- EXPECTED OUTPUT: Highest = 785, Lowest = 55
 
